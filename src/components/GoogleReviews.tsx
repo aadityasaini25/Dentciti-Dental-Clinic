@@ -4,35 +4,35 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
-// Surgical-context patient testimonials. Replace with real Google reviews when collected.
+// Dental-context patient testimonials. Replace with real Google reviews when collected.
 const reviews = [
   {
-    name: "Rajesh Verma",
-    initials: "RV",
+    name: "Annvi Shah",
+    initials: "AS",
     date: "Recent",
     review:
-      "I had laser piles surgery with Dr. Deepak Kumar after suffering for years. The procedure was painless and I was back home the same evening. Within 2 days I was walking comfortably and back to work in a week. Highly recommended for anyone hesitating about surgery.",
+      "Dr. Shubra is really good at her work. I was really anxious going to the dentist because of my phobia and because I was treated during my pregnancy. But she kept in mind all my concerns and the safety of my baby . It was almost painless and super quick. Would definitely recommend for all your Dental concerns.",
   },
   {
-    name: "Sunita Sharma",
-    initials: "SS",
+    name: "Pooja Sachdeva",
+    initials: "PS",
     date: "Recent",
     review:
-      "I had laparoscopic gallbladder surgery here. Dr. Deepak Kumar explained everything patiently before and after. The clinic is very clean, the staff is supportive, and my insurance was processed cashless without any hassle. Recovery was much faster than I expected.",
+      "I visited at Shubhra Sharma denticiti clinic for root canal and capping.she did it very perfectly and ensured that I get assurity that cap get perfectly set. Also their staff members are so humble and nyc in nature.",
   },
   {
-    name: "Mohit Aggarwal",
-    initials: "MA",
+    name: "Ashwin Prabhu",
+    initials: "AP",
     date: "Recent",
     review:
-      "Got my hernia surgery done laparoscopically. Just three small scars and zero pain after the second day. Dr. Deepak Kumar's experience really shows — he handles everything with calm confidence. The TPA team handled all my insurance paperwork.",
+      "I visited Dr Shubhra Sharma's Denciti dental clinic in Vashi for dental filling and fixing cap. She treated my issues very perfectly. She made sure that I am comfortable after fixing the cap. I truly recommend this clinic for dental treatments.",
   },
   {
-    name: "Priya Joshi",
-    initials: "PJ",
+    name: "Ari Rajeshwari",
+    initials: "AR",
     date: "Recent",
     review:
-      "I came in for varicose veins laser treatment. The team was professional and respectful throughout. The procedure was quick, walk-in walk-out. Within a few weeks the veins were almost completely gone. Truly grateful to Dr. Kumar and his team.",
+      "Very very nice experience and treatment after 3 years also still there is no problem shubra mam is so sweet and understanding doctor and staff also very very helpful and nice.",
   },
 ];
 
@@ -50,12 +50,12 @@ export default function GoogleReviews() {
             className="object-contain opacity-90"
           />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
-            What Our <span className="text-gradient-teal">Patients Say</span>
+            What Our <span className="text-gradient-blue">Patients Say</span>
           </h2>
         </div>
-        <div className="w-16 h-0.5 bg-[#C9A961] rounded-full mb-4" />
+        <div className="w-16 h-0.5 bg-[#F5D548] rounded-full mb-4" />
         <p className="text-slate-600 max-w-2xl mb-14 font-light text-base md:text-lg">
-          Real outcomes, in our patients' own words.
+          Real outcomes, in our patients&apos; own words.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
@@ -66,10 +66,10 @@ export default function GoogleReviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 hover:border-[#0E7C7B]/30 hover:-translate-y-1 flex flex-col h-full"
+              className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 hover:border-[#2A93C7]/30 hover:-translate-y-1 flex flex-col h-full"
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg bg-gradient-to-br from-[#0E7C7B] to-[#0A2540] shadow-md shrink-0">
+                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg bg-gradient-to-br from-[#2A93C7] to-[#0F2A40] shadow-md shrink-0">
                   {review.initials}
                 </div>
                 <div>
@@ -77,7 +77,7 @@ export default function GoogleReviews() {
                   <p className="text-sm text-slate-500 mt-1">{review.date}</p>
                 </div>
               </div>
-              <div className="flex text-[#C9A961] mb-4 gap-0.5">
+              <div className="flex text-[#F5D548] mb-4 gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}

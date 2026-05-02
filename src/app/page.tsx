@@ -72,10 +72,10 @@ export default function Home() {
   const closePopup = () => setShowPopup(false);
 
   return (
-    <div className="bg-mist min-h-screen">
+    <div className="bg-mist min-h-screen overflow-x-hidden max-w-[100vw]">
       <BackgroundGraphics />
 
-      <div className="relative z-10">
+      <div className="relative z-10 overflow-x-hidden">
         <Header onBookAppointment={openPopup} />
         <HeroSection onBookAppointment={openPopup} />
         <OfferSection onBookAppointment={openPopup} />

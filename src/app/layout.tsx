@@ -9,35 +9,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Isha-Para Clinic | Dr. Deepak Kumar — Laser & Laparoscopic Surgeon, Haridwar",
+  title:
+    "Dentciti Dental Clinic | Dr. Shubhra Sharma — Cosmetic Dentist & Implantologist, Vashi",
   description:
-    "Advanced Laser Surgery Specialist in Haridwar. Dr. Deepak Kumar — 25+ years of expertise in Laser Piles/Fistula/Fissure, Varicose Veins, Laparoscopic Hernia, Gallstones & Breast Lump treatment. Pain-free, minimally invasive. All insurance (TPA) accepted.",
+    "Premium painless dentistry in Vashi, Navi Mumbai. Dr. Shubhra Sharma — 21+ years of expertise in dental implants (from ₹25,000), cosmetic dentistry, single-sitting root canal, braces and aligners. Painless · Fast · Affordable. Book your consultation today.",
   keywords:
-    "Dr. Deepak Kumar, Isha-Para Clinic, Haridwar Surgeon, Laser Piles Treatment, Laser Fistula, Laser Fissure, Laser Varicose Veins, Laparoscopic Surgery Haridwar, Hernia Surgery, Gallstone Surgery, Breast Lump Treatment, General Surgeon Uttarakhand, TPA Cashless Surgery",
-  authors: [{ name: "Dr. Deepak Kumar" }],
-  creator: "Isha-Para Clinic",
-  publisher: "Isha-Para Clinic",
+    "Dr. Shubhra Sharma, Dentciti Dental Clinic, dental clinic Vashi, dentist Navi Mumbai, dental implants Vashi, implants from 25000, cosmetic dentist Navi Mumbai, smile makeover Vashi, painless root canal, single sitting RCT, clear aligners Vashi, braces Sector 17 Vashi",
+  authors: [{ name: "Dr. Shubhra Sharma" }],
+  creator: "Dentciti Dental Clinic",
+  publisher: "Dentciti Dental Clinic",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://id.vyaparify.com"),
+  metadataBase: new URL("https://dentciti.org"),
   alternates: {
-    canonical: "/drdeepak-kumar-general-surgeon",
+    canonical: "/dental-clinic-in-navi-mumbai",
   },
   openGraph: {
-    title: "Isha-Para Clinic | Advanced Laser & Laparoscopic Surgery, Haridwar",
+    title:
+      "Dentciti Dental Clinic | Painless · Fast · Affordable Dentistry in Vashi",
     description:
-      "Dr. Deepak Kumar — 25+ years trusted surgeon. Pain-free laser treatment for Piles, Fistula, Fissure, Varicose Veins. All TPA/Insurance accepted.",
-    url: "https://id.vyaparify.com/drdeepak-kumar-general-surgeon",
-    siteName: "Isha-Para Clinic",
+      "Dr. Shubhra Sharma — 21+ years of trusted dental care in Navi Mumbai. Dental implants from ₹25,000, painless root canals, smile makeovers, clear aligners. EMI options available.",
+    url: "https://dentciti.org/dental-clinic-in-navi-mumbai",
+    siteName: "Dentciti Dental Clinic",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Isha-Para Clinic — Dr. Deepak Kumar, Laser & Laparoscopic Surgeon",
+        alt: "Dentciti Dental Clinic — Dr. Shubhra Sharma, Cosmetic Dentist & Implantologist, Vashi",
       },
     ],
     locale: "en_IN",
@@ -45,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Isha-Para Clinic | Dr. Deepak Kumar",
+    title: "Dentciti Dental Clinic | Dr. Shubhra Sharma",
     description:
-      "Advanced Laser Surgery Specialist in Haridwar — 25+ Years Trusted. All Insurance Accepted.",
+      "Painless · Fast · Affordable. Dental implants from ₹25,000. 21+ years of trusted care in Vashi, Navi Mumbai.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -63,48 +65,44 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD structured data for local medical business — improves SEO + rich results.
+// JSON-LD structured data for local dental practice — improves SEO + rich results.
 const clinicSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  name: "Isha-Para Clinic",
+  "@type": "Dentist",
+  name: "Dentciti Dental Clinic",
   description:
-    "Advanced laser & laparoscopic surgery clinic in Haridwar led by Dr. Deepak Kumar. 25+ years of surgical expertise.",
-  url: "https://id.vyaparify.com/drdeepak-kumar-general-surgeon",
-  telephone: "+91-9756788082",
+    "Premium painless dentistry in Vashi, Navi Mumbai led by Dr. Shubhra Sharma — 21+ years of clinical experience in cosmetic dentistry and implantology.",
+  url: "https://dentciti.org/dental-clinic-in-navi-mumbai",
+  telephone: "+91-9320450006",
+  priceRange: "₹₹",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "D-21, Isha-Para Clinic, Near BSNL Office Chowraha",
-    addressLocality: "Haridwar",
-    addressRegion: "Uttarakhand",
+    streetAddress: "Shop 52, Shiv Centre, Sector 17 (Behind Everest Cycle)",
+    addressLocality: "Vashi, Navi Mumbai",
+    addressRegion: "Maharashtra",
+    postalCode: "400703",
     addressCountry: "IN",
   },
-  medicalSpecialty: ["Surgery", "Laparoscopy", "ColorectalSurgery"],
+  medicalSpecialty: ["Dentistry", "CosmeticDentistry", "Implantology"],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "10:30",
+      opens: "10:30",
+      closes: "13:30",
     },
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "19:00",
-      closes: "22:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "10:00",
-      closes: "14:00",
+      opens: "17:00",
+      closes: "21:00",
     },
   ],
   physician: {
     "@type": "Physician",
-    name: "Dr. Deepak Kumar",
-    medicalSpecialty: "Surgery",
-    yearsOfExperience: 25,
+    name: "Dr. Shubhra Sharma",
+    medicalSpecialty: ["Dentistry", "CosmeticDentistry", "Implantology"],
+    yearsOfExperience: 21,
   },
 };
 
@@ -118,7 +116,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0E7C7B" />
+        <meta name="theme-color" content="#2A93C7" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"

@@ -3,31 +3,46 @@
 @tailwind utilities;
 
 /* ──────────────────────────────────────────────────────────────────────
-   Isha-Para Clinic — premium medical design tokens
-   Primary: deep medical teal     Accent: gold
-   Dark surfaces: navy            Light surfaces: clinical mist
+   Dentciti Dental Clinic — premium dental design tokens
+   Derived from the brand mark: sky blue + warm yellow.
+   Primary action: brand-blue (AA-readable button color)
+   Decoration:    brand-blue-bright (logo-matching, low-contrast)
+   Accent:        brand-yellow (used sparingly — badges, highlights)
+   Dark surfaces: brand-ink (deep navy that complements the blues)
    ────────────────────────────────────────────────────────────────────── */
 @layer base {
   :root {
-    --brand-teal: #0E7C7B;
-    --brand-teal-dark: #0B5F5E;
-    --brand-teal-deep: #083F3F;
-    --brand-navy: #0A2540;
-    --brand-navy-deep: #061B2E;
-    --brand-gold: #C9A961;
-    --brand-gold-light: #E6CF94;
-    --bg-mist: #F4F9F9;
-    --bg-tint: #E6F2F2;
-    --glass-border: rgba(14, 124, 123, 0.18);
+    /* Primary blue family */
+    --brand-blue: #2A93C7;
+    --brand-blue-dark: #1E7AAC;
+    --brand-blue-deep: #155E84;
+    --brand-blue-bright: #4FB3DC;   /* logo-matching, decorative only */
+    --brand-blue-soft: #E5F3FB;
+
+    /* Dark surfaces */
+    --brand-ink: #0F2A40;
+    --brand-ink-deep: #081827;
+
+    /* Warm yellow accent (logo) */
+    --brand-yellow: #F5D548;
+    --brand-yellow-light: #FBE783;
+
+    /* Backgrounds */
+    --bg-mist: #F5FAFD;
+    --bg-tint: #E5F3FB;
+
+    /* Effects */
+    --glass-border: rgba(42, 147, 199, 0.18);
     --glass-bg: rgba(255, 255, 255, 0.9);
-    --shadow-premium: 0 20px 50px -12px rgba(10, 37, 64, 0.18);
-    --shadow-premium-hover: 0 30px 60px -12px rgba(14, 124, 123, 0.25);
+    --shadow-premium: 0 20px 50px -12px rgba(15, 42, 64, 0.18);
+    --shadow-premium-hover: 0 30px 60px -12px rgba(42, 147, 199, 0.28);
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   body {
@@ -36,10 +51,21 @@
     line-height: 1.6;
     color: #0F172A;
     background-color: var(--bg-mist);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  /* Prevent any descendant from forcing horizontal scroll. `clip` is stricter
+     than `hidden` (no scroll context) and is now widely supported. */
+  #__next, main, body > div {
+    overflow-x: clip;
+    max-width: 100vw;
   }
 
   ::selection {
-    background: var(--brand-teal);
+    background: var(--brand-blue);
     color: #fff;
   }
 }
@@ -62,19 +88,21 @@
   .glass-premium {
     background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(14, 124, 123, 0.22);
-    box-shadow: 0 8px 32px 0 rgba(10, 37, 64, 0.1);
+    border: 1px solid rgba(42, 147, 199, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(15, 42, 64, 0.1);
   }
 
-  .text-gradient-teal {
-    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-navy) 100%);
+  /* Headline gradient — primary brand voice (deep blue → ink) */
+  .text-gradient-blue {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-ink) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-gold {
-    background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+  /* Sunny accent gradient for premium yellow flourishes */
+  .text-gradient-yellow {
+    background: linear-gradient(135deg, var(--brand-yellow) 0%, var(--brand-yellow-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -130,16 +158,16 @@
     animation: float-slow 8s ease-in-out infinite;
   }
 
-  /* Decorative dotted backdrop in brand teal */
+  /* Decorative dotted backdrop in brand blue */
   .bg-pattern-dots {
-    background-image: radial-gradient(var(--brand-teal) 0.5px, transparent 0.5px);
+    background-image: radial-gradient(var(--brand-blue) 0.5px, transparent 0.5px);
     background-size: 24px 24px;
     opacity: 0.1;
   }
 
   .bg-pattern-grid {
-    background-image: linear-gradient(var(--brand-teal) 0.5px, transparent 0.5px),
-      linear-gradient(90deg, var(--brand-teal) 0.5px, transparent 0.5px);
+    background-image: linear-gradient(var(--brand-blue) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, var(--brand-blue) 0.5px, transparent 0.5px);
     background-size: 40px 40px;
     opacity: 0.05;
   }
@@ -157,8 +185,8 @@
     background: linear-gradient(
       90deg,
       transparent,
-      var(--brand-teal),
-      var(--brand-gold),
+      var(--brand-blue),
+      var(--brand-yellow),
       transparent
     );
     background-size: 200% 100%;
@@ -207,13 +235,13 @@
   .glass-header {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(14, 124, 123, 0.1);
+    border-bottom: 1px solid rgba(42, 147, 199, 0.1);
     transition: all 0.4s ease;
   }
 
   .glass-header.scrolled {
     background: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 4px 20px -5px rgba(10, 37, 64, 0.12);
+    box-shadow: 0 4px 20px -5px rgba(15, 42, 64, 0.12);
   }
 }
 
@@ -224,34 +252,34 @@
 
   .btn-primary {
     @apply text-white shadow-lg rounded-full px-8 py-3.5;
-    background-color: var(--brand-teal);
+    background-color: var(--brand-blue);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-primary:hover {
-    background-color: var(--brand-teal-dark);
+    background-color: var(--brand-blue-dark);
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px -10px rgba(14, 124, 123, 0.5);
+    box-shadow: 0 12px 30px -10px rgba(42, 147, 199, 0.5);
   }
 
-  .btn-gold {
-    @apply text-white shadow-lg rounded-full px-8 py-3.5 font-bold;
-    background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
-    color: var(--brand-navy);
+  .btn-yellow {
+    @apply shadow-lg rounded-full px-8 py-3.5 font-bold;
+    background: linear-gradient(135deg, var(--brand-yellow) 0%, var(--brand-yellow-light) 100%);
+    color: var(--brand-ink);
   }
 
-  .btn-gold:hover {
+  .btn-yellow:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px -10px rgba(201, 169, 97, 0.5);
+    box-shadow: 0 12px 30px -10px rgba(245, 213, 72, 0.5);
   }
 
   .btn-secondary {
     @apply text-white shadow-lg rounded-full;
-    background-color: var(--brand-navy);
+    background-color: var(--brand-ink);
   }
 
   .btn-secondary:hover {
-    background-color: var(--brand-navy-deep);
+    background-color: var(--brand-ink-deep);
   }
 
   .card {
@@ -266,7 +294,7 @@
 
   .section-eyebrow {
     @apply font-semibold text-xs md:text-sm uppercase tracking-[0.25em];
-    color: var(--brand-teal);
+    color: var(--brand-blue);
   }
 }
 
@@ -278,8 +306,8 @@
 }
 
 @keyframes pulse-shadow {
-  0%, 100% { box-shadow: 0 0 20px rgba(14, 124, 123, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(14, 124, 123, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(42, 147, 199, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(42, 147, 199, 0.6); }
 }
 
 @keyframes floating {
@@ -326,12 +354,12 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--brand-teal);
+  outline: 2px solid var(--brand-blue);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(14, 124, 123, 0.15);
+  box-shadow: 0 0 0 4px rgba(42, 147, 199, 0.15);
 }
 
-/* Scrollbar in brand teal */
+/* Scrollbar in brand blue */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -341,12 +369,12 @@ select:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--brand-teal), var(--brand-navy));
+  background: linear-gradient(to bottom, var(--brand-blue), var(--brand-ink));
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--brand-teal-dark), var(--brand-navy-deep));
+  background: linear-gradient(to bottom, var(--brand-blue-dark), var(--brand-ink-deep));
 }
 
 /* Print: hide CTAs/popups */

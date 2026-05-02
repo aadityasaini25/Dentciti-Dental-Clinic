@@ -26,10 +26,10 @@ export default function Header({ onBookAppointment }: HeaderProps) {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-8">
-          <div className="bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+          <div className="bg-white p-1.5 md:p-2 rounded-xl shadow-md ring-1 ring-[#2A93C7]/10">
             <Image
-              src="/images/logo.svg"
-              alt="Isha-Para Clinic"
+              src="/images/logo.jpg"
+              alt="Dentciti Dental Clinic"
               width={160}
               height={60}
               className="h-10 md:h-14 w-auto"
@@ -41,13 +41,13 @@ export default function Header({ onBookAppointment }: HeaderProps) {
               <MapPin className="w-3 h-3" /> Location
             </p>
             <a
-              href="https://maps.google.com/?q=Isha-Para+Clinic+Near+BSNL+Office+Chowraha+Haridwar"
+              href="https://maps.app.goo.gl/gbsegEcgFDa8fURH9"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-[11px] leading-tight font-semibold text-slate-700 max-w-[280px] hover:text-[#0E7C7B] transition-colors"
+              className="block text-[11px] leading-tight font-semibold text-slate-700 max-w-[280px] hover:text-[#2A93C7] transition-colors"
             >
-              D-21, Isha-Para Clinic,<br />
-              Near BSNL Office Chowraha, Haridwar
+              Shop 52, Shiv Centre,<br />
+              Sector 17, Vashi, Navi Mumbai
             </a>
           </div>
         </div>
@@ -57,23 +57,23 @@ export default function Header({ onBookAppointment }: HeaderProps) {
             <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mb-0.5">Contact Us</p>
             <div className="flex flex-col">
               <a
-                href="tel:+919756788082"
-                className="text-sm font-bold text-[#0A2540] hover:text-[#0E7C7B] transition-colors flex items-center justify-end gap-1.5"
+                href="tel:+919320450006"
+                className="text-sm font-bold text-[#0F2A40] hover:text-[#2A93C7] transition-colors flex items-center justify-end gap-1.5"
               >
                 <Phone className="w-3.5 h-3.5" />
-                +91 97567 88082
+                +91 93204 50006
               </a>
               <a
-                href="mailto:myfamilydentists@gmail.com"
-                className="text-[11px] font-medium text-slate-600 hover:text-[#0E7C7B] transition-colors"
+                href="mailto:dentciti@gmail.com"
+                className="text-[11px] font-medium text-slate-600 hover:text-[#2A93C7] transition-colors"
               >
-                myfamilydentists@gmail.com
+                dentciti@gmail.com
               </a>
             </div>
           </div>
           <button
             onClick={onBookAppointment}
-            className="bg-[#0E7C7B] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#0B5F5E] hover:shadow-[0_10px_30px_-8px_rgba(14,124,123,0.6)] hover:-translate-y-0.5 transition-all shadow-md"
+            className="bg-[#2A93C7] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#1E7AAC] hover:shadow-[0_10px_30px_-8px_rgba(42,147,199,0.6)] hover:-translate-y-0.5 transition-all shadow-md"
           >
             Book Consultation
           </button>

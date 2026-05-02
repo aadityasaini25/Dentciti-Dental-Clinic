@@ -13,15 +13,15 @@ interface PopupFormProps {
 const BOOKING_SCRIPT_URL = process.env.NEXT_PUBLIC_BOOKING_SCRIPT_URL || '';
 
 const TREATMENT_OPTIONS = [
-  'Laser Piles / Fistula / Fissure',
-  'Laser Varicose Veins',
-  'Laparoscopic Surgery (Gallstone / Appendix)',
-  'Hernia Surgery',
-  'Breast Lump Treatment',
+  'Dental Implants',
+  'Smile Makeover / Veneers',
+  'Root Canal Treatment',
+  'Braces / Clear Aligners',
+  'Teeth Whitening',
   'General Consultation',
 ] as const;
 
-// Booking modal — surgical-context treatment selector.
+// Booking modal — dental treatment selector.
 // A11y: Escape closes, click-outside closes, focus moved into the modal.
 export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
   const router = useRouter();
@@ -66,7 +66,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
       onClose();
       router.push('/thank-you');
     } catch {
-      alert('Something went wrong. Please call us at +91 97567 88082 to book.');
+      alert('Something went wrong. Please call us at +91 93204 50006 to book.');
     } finally {
       setIsSubmitting(false);
     }
@@ -80,7 +80,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 bg-[#061B2E]/70 backdrop-blur-sm flex items-center justify-center z-[100] p-4"
+          className="fixed inset-0 bg-[#081827]/70 backdrop-blur-sm flex items-center justify-center z-[100] p-4"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -96,7 +96,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
           >
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-[#0E7C7B] hover:text-white transition-all duration-300 z-10"
+              className="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-[#2A93C7] hover:text-white transition-all duration-300 z-10"
               aria-label="Close booking form"
             >
               <X className="w-5 h-5" />
@@ -106,10 +106,10 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
               <div className="text-center mb-8">
                 <p className="section-eyebrow mb-2">Book Your Appointment</p>
                 <h2 id="popup-title" className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                  Consultation with <span className="text-gradient-teal">Dr. Deepak Kumar</span>
+                  Consultation with <span className="text-gradient-blue">Dr. Shubhra Sharma</span>
                 </h2>
                 <p className="text-slate-500 text-sm mt-3 font-light">
-                  25+ years of surgical expertise · All Insurance (TPA) accepted
+                  21+ years of clinical excellence · Painless · Fast · Affordable
                 </p>
               </div>
 
@@ -126,8 +126,8 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
                       onClick={() => setTreatmentType(opt)}
                       className={`text-left text-xs md:text-sm font-semibold px-4 py-3 rounded-xl border transition-all ${
                         treatmentType === opt
-                          ? 'bg-[#0A2540] text-white border-[#0A2540] shadow-md'
-                          : 'bg-white text-slate-700 border-slate-200 hover:border-[#0E7C7B] hover:text-[#0E7C7B]'
+                          ? 'bg-[#0F2A40] text-white border-[#0F2A40] shadow-md'
+                          : 'bg-white text-slate-700 border-slate-200 hover:border-[#2A93C7] hover:text-[#2A93C7]'
                       }`}
                     >
                       {opt}
@@ -144,7 +144,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
                     name="fullName"
                     required
                     placeholder="Full Name"
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#0E7C7B] focus:bg-white focus:ring-4 focus:ring-[#0E7C7B]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400"
+                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#2A93C7] focus:bg-white focus:ring-4 focus:ring-[#2A93C7]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400"
                   />
                   <input
                     type="tel"
@@ -152,7 +152,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
                     required
                     pattern="[0-9+\s-]{10,15}"
                     placeholder="Phone Number"
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#0E7C7B] focus:bg-white focus:ring-4 focus:ring-[#0E7C7B]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400"
+                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#2A93C7] focus:bg-white focus:ring-4 focus:ring-[#2A93C7]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400"
                   />
                 </div>
 
@@ -161,21 +161,21 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
                   name="email"
                   required
                   placeholder="Email Address"
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#0E7C7B] focus:bg-white focus:ring-4 focus:ring-[#0E7C7B]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400"
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#2A93C7] focus:bg-white focus:ring-4 focus:ring-[#2A93C7]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400"
                 />
 
                 <textarea
                   name="concern"
                   required
                   rows={3}
-                  placeholder="Briefly describe your symptoms or concern..."
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#0E7C7B] focus:bg-white focus:ring-4 focus:ring-[#0E7C7B]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400 resize-none"
+                  placeholder="Briefly describe your dental concern or what you'd like to discuss..."
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 outline-none focus:border-[#2A93C7] focus:bg-white focus:ring-4 focus:ring-[#2A93C7]/15 transition-all text-slate-800 font-medium placeholder:text-slate-400 resize-none"
                 />
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full group relative overflow-hidden bg-gradient-to-r from-[#0E7C7B] to-[#0A2540] text-white py-5 rounded-2xl font-black text-lg shadow-2xl hover:shadow-[#0E7C7B]/40 active:scale-[0.99] transition-all disabled:opacity-70 disabled:pointer-events-none"
+                  className="w-full group relative overflow-hidden bg-gradient-to-r from-[#2A93C7] to-[#0F2A40] text-white py-5 rounded-2xl font-black text-lg shadow-2xl hover:shadow-[#2A93C7]/40 active:scale-[0.99] transition-all disabled:opacity-70 disabled:pointer-events-none"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     {isSubmitting ? (
@@ -196,7 +196,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
               </form>
 
               <p className="mt-6 text-center text-slate-400 text-xs font-medium">
-                🔒 Your information is private & secure. We'll call within 2 hours to confirm.
+                🔒 Your information is private &amp; secure. We&apos;ll call within 2 hours to confirm.
               </p>
             </div>
           </motion.div>

@@ -1,16 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://beaudent.in/sitemap.xml
+Sitemap: https://dentciti.org/sitemap.xml
 
-# Disallow admin or sensitive paths if any
-# Disallow: /admin/
-# Disallow: /private/
-
-# Crawl-delay for specific bots
 User-agent: Googlebot
 Crawl-delay: 1
 
 User-agent: Bingbot
-Crawl-delay: 1 
+Crawl-delay: 1

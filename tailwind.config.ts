@@ -9,25 +9,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Isha-Para brand palette — medical premium
+        // Dentciti brand palette — derived from logo (sky blue + warm yellow)
         brand: {
-          teal: "#0E7C7B",
-          tealDark: "#0B5F5E",
-          tealDeep: "#083F3F",
-          navy: "#0A2540",
-          navyDeep: "#061B2E",
-          gold: "#C9A961",
-          goldLight: "#E6CF94",
-          mist: "#F4F9F9",
-          tint: "#E6F2F2",
+          blue: "#2A93C7",
+          blueDark: "#1E7AAC",
+          blueDeep: "#155E84",
+          blueBright: "#4FB3DC",
+          blueSoft: "#E5F3FB",
+          ink: "#0F2A40",
+          inkDeep: "#081827",
+          yellow: "#F5D548",
+          yellowLight: "#FBE783",
+          mist: "#F5FAFD",
+          tint: "#E5F3FB",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        premium: "0 20px 50px -12px rgba(10, 37, 64, 0.18)",
-        premiumHover: "0 30px 60px -12px rgba(14, 124, 123, 0.25)",
+        premium: "0 20px 50px -12px rgba(15, 42, 64, 0.18)",
+        premiumHover: "0 30px 60px -12px rgba(42, 147, 199, 0.28)",
       },
     },
   },

@@ -10,20 +10,20 @@ interface DoctorProfileProps {
 
 const doctors = [
   {
-    name: "Dr. Deepak Kumar",
-    title: "Senior Laser & Laparoscopic Surgeon",
-    image: "/images/doctor/dr. deepak.png",
+    name: "Dr. Shubhra Sharma",
+    title: "Cosmetic Dentist & Implantologist",
+    image: "/images/doctor/dr-shubhra.jpg",
     description:
-      "Dr. Deepak Kumar is a highly respected General Surgeon with over 25 years of clinical and operative experience. He specializes in advanced laser treatment for piles, fistula and fissure, laser varicose veins, and laparoscopic procedures including hernia, gallstone and appendix surgery, as well as minimal-scar breast lump treatment.",
+      "Dr. Shubhra Sharma is one of Navi Mumbai's most preferred dentists, with 21 years of clinical experience in cosmetic dentistry, dental implants and full-mouth rehabilitation. Her practice at Dentciti Dental Clinic, Vashi is built on three principles — painless procedures, fast turnaround, and transparent, affordable pricing.",
     highlights: [
-      "25+ Years of Surgical Experience",
-      "Advanced Laser Surgery Specialist",
-      "Laparoscopic & Minimally Invasive Expert",
-      "Thousands of Successful Procedures",
-      "All Insurance (TPA) — Cashless Treatment",
+      "21+ Years of Clinical Experience",
+      "Cosmetic Dentist & Implantologist",
+      "Dental Implants from ₹25,000 (incl. crown)",
+      "Single-Sitting Root Canal Specialist",
+      "Trusted by Thousands Across Navi Mumbai",
     ],
     footer:
-      "Dr. Kumar's commitment is simple — deliver world-class surgical outcomes with the least possible discomfort, the shortest recovery, and complete transparency through every step.",
+      "Dr. Sharma's commitment is simple — premium dental outcomes with the least possible discomfort, the shortest treatment time, and honest pricing that makes quality dentistry accessible to every patient.",
   },
 ];
 
@@ -32,13 +32,13 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
     <section className="relative bg-white py-20 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <p className="section-eyebrow mb-2">Meet Your Surgeon</p>
+          <p className="section-eyebrow mb-2">Meet Your Dentist</p>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
-            A Surgeon You Can <span className="text-gradient-teal">Trust</span>
+            A Dentist You Can <span className="text-gradient-blue">Trust</span>
           </h2>
-          <div className="w-16 h-0.5 bg-[#C9A961] rounded-full mx-auto" />
+          <div className="w-16 h-0.5 bg-[#F5D548] rounded-full mx-auto" />
           <p className="mt-5 text-slate-600 text-base md:text-lg font-light">
-            Decades of refined expertise. Modern surgical technology. Deeply personal care.
+            Decades of refined expertise. Modern dental technology. Deeply personal care.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
             >
               <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 lg:gap-16 items-center md:items-start`}>
                 <div className="w-full md:w-1/2 lg:w-2/5 flex justify-center">
-                  <div className="relative w-full max-w-sm aspect-[4/5] rounded-[28px] overflow-hidden shadow-2xl border-8 border-white ring-1 ring-slate-100 shimmer-effect bg-gradient-to-br from-[#0E7C7B] to-[#0A2540]">
+                  <div className="relative w-full max-w-sm aspect-[4/5] rounded-[28px] overflow-hidden shadow-2xl border-8 border-white ring-1 ring-slate-100 shimmer-effect bg-gradient-to-br from-[#2A93C7] to-[#0F2A40]">
                     <Image
                       src={doctor.image}
                       alt={doctor.name}
@@ -65,7 +65,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                     {/* Credential badge floating bottom-left */}
                     <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-2.5 shadow-2xl border border-white/50">
                       <p className="text-[9px] uppercase tracking-widest font-bold text-slate-400">Experience</p>
-                      <p className="text-base font-black text-[#0A2540]">25+ Years</p>
+                      <p className="text-base font-black text-[#0F2A40]">21+ Years</p>
                     </div>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                   <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 tracking-tight">
                     {doctor.name}
                   </h3>
-                  <p className="text-[#0E7C7B] font-semibold text-sm md:text-base uppercase tracking-[0.2em] mb-6">
+                  <p className="text-[#2A93C7] font-semibold text-sm md:text-base uppercase tracking-[0.2em] mb-6">
                     {doctor.title}
                   </p>
                   <div className="text-slate-600 text-base md:text-lg leading-relaxed space-y-5 font-light">
@@ -85,7 +85,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                           key={highlight}
                           className="flex items-start gap-3 justify-center md:justify-start text-slate-700 font-medium"
                         >
-                          <CheckCircle2 className="w-5 h-5 text-[#0E7C7B] mt-0.5 shrink-0" />
+                          <CheckCircle2 className="w-5 h-5 text-[#2A93C7] mt-0.5 shrink-0" />
                           <span>{highlight}</span>
                         </li>
                       ))}
@@ -101,7 +101,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
         <div className="mt-20 flex justify-center">
           <button
             onClick={onBookAppointment}
-            className="bg-[#0E7C7B] text-white px-10 py-4 rounded-full font-semibold text-base hover:bg-[#0B5F5E] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="bg-[#2A93C7] text-white px-10 py-4 rounded-full font-semibold text-base hover:bg-[#1E7AAC] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Book Your Consultation
           </button>

@@ -8,80 +8,80 @@ interface FAQSectionProps {
   onBookAppointment: () => void;
 }
 
-type FAQCategory = 'laser' | 'laparoscopic';
+type FAQCategory = 'implants' | 'general';
 
-// Two-tab FAQ — surgical-context (laser proctology + laparoscopy) instead of dental.
+// Two-tab FAQ — dental implants + general dentistry, mapped to clinic positioning.
 export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
-  const [activeCategory, setActiveCategory] = useState<FAQCategory>('laser');
+  const [activeCategory, setActiveCategory] = useState<FAQCategory>('implants');
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
-  const laserFAQs = [
+  const implantFAQs = [
     {
-      question: "Is laser surgery for piles really painless?",
+      question: "Is the dental implant procedure painful?",
       answer:
-        "Almost. Laser piles surgery is performed under short-acting anesthesia and uses focused laser energy instead of cuts or stitches. Most patients describe only mild discomfort post-procedure, manageable with simple oral medication, and resume routine work within 24–48 hours.",
+        "No. Implant placement is performed under local anesthesia using a gentle, modern surgical technique. Most patients describe only mild pressure during the procedure. Post-op discomfort is minimal and easily managed with simple oral medication.",
     },
     {
-      question: "How long does the laser procedure take?",
+      question: "How much do dental implants cost at Dentciti?",
       answer:
-        "Most laser treatments — for piles, fistula, fissure, or varicose veins — are completed in 30–45 minutes. Patients are usually discharged the same day after a brief observation period.",
+        "Single-tooth implants start at ₹25,000 — and that price includes the crown. Final pricing depends on the implant brand, your bone condition and the crown material chosen. We share a transparent, written estimate after your consultation, with no surprises later.",
     },
     {
-      question: "Will laser treatment leave scars?",
+      question: "How long does the implant process take?",
       answer:
-        "No. Laser procedures are virtually scarless. There are no large surgical incisions, no external stitches, and the laser fiber is introduced through tiny natural openings, leaving no visible mark.",
+        "The actual surgery is under an hour. The full process — from placement to final crown — typically takes 3–4 months to allow proper bone integration. In selected cases, immediate-load implants can be done so you walk out the same day with a temporary tooth.",
     },
     {
-      question: "Are laser treatments covered under insurance?",
+      question: "Am I a candidate for dental implants?",
       answer:
-        "Yes. Isha-Para Clinic accepts all major insurance providers and TPAs. Our administrative team takes care of pre-authorization, claims and discharge paperwork so your treatment is fully cashless.",
+        "Most adults with reasonably healthy gums and bone are candidates. A short consultation with a digital X-ray or CBCT scan tells us with certainty. Even patients who lack bone often qualify after simple bone grafting procedures.",
     },
     {
-      question: "What is the recurrence rate after laser surgery?",
+      question: "How long do implants last?",
       answer:
-        "Modern laser treatment has significantly lower recurrence rates compared to traditional open surgery. With Dr. Deepak Kumar's experience and proper post-procedure care guidance, long-term results are excellent.",
+        "With proper hygiene and routine check-ups, modern dental implants typically last 15–25 years and often a lifetime. Dentciti uses globally trusted implant systems with strong long-term clinical track records.",
     },
     {
-      question: "How soon can I return to work after laser piles surgery?",
+      question: "Do you offer EMI on implants?",
       answer:
-        "Most patients resume desk work within 24–48 hours and physically demanding work within 5–7 days. You will receive a personalized recovery plan after your procedure.",
-    },
-  ];
-
-  const laparoscopicFAQs = [
-    {
-      question: "What is laparoscopic surgery?",
-      answer:
-        "Laparoscopic (or 'keyhole') surgery is a minimally invasive technique where the surgeon operates through a few small 5–10 mm incisions using a camera and specialized instruments — instead of one large open cut.",
-    },
-    {
-      question: "Is laparoscopic gallstone or hernia surgery safe?",
-      answer:
-        "Yes — it is now the gold standard for both procedures. With Dr. Deepak Kumar's 25+ years of operative experience, laparoscopic surgery here delivers excellent outcomes with smaller incisions, less pain and quicker discharge.",
-    },
-    {
-      question: "How long is the hospital stay?",
-      answer:
-        "Most laparoscopic procedures (gallbladder, appendix, hernia repair) require only a 1-day hospital stay. Many simpler cases are managed as day-care surgeries with same-day discharge.",
-    },
-    {
-      question: "Will I have visible scars after laparoscopic surgery?",
-      answer:
-        "Scars from laparoscopic surgery are very small (5–10 mm) and tend to fade significantly over a few months. They are far less visible than traditional open-surgery scars.",
-    },
-    {
-      question: "What is the recovery time?",
-      answer:
-        "Most patients are walking within hours, eating normally within a day, and return to routine work in 5–10 days. A full personalized recovery roadmap is shared at discharge.",
-    },
-    {
-      question: "Is laparoscopic surgery covered by insurance?",
-      answer:
-        "Yes. All laparoscopic procedures are covered under most health insurance policies and TPAs. Cashless treatment and pre-authorization are fully handled by our team.",
+        "Yes. We offer flexible EMI plans through partner financing, plus full transparency on what's included in your package. Ask our front desk during consultation and we'll walk you through the options.",
     },
   ];
 
-  const currentFAQs = activeCategory === 'laser' ? laserFAQs : laparoscopicFAQs;
+  const generalFAQs = [
+    {
+      question: "Is root canal treatment really painful?",
+      answer:
+        "Not anymore. With modern rotary endodontics, rubber-dam isolation and digital X-ray, most root canals at Dentciti are completed in a single sitting and are virtually painless under local anesthesia. You'll feel the same as you would for a regular filling.",
+    },
+    {
+      question: "How long does professional teeth whitening take?",
+      answer:
+        "An in-clinic whitening session takes about 45 minutes and delivers visibly brighter teeth in a single visit. We also offer take-home whitening kits for gradual results, depending on your preference and case.",
+    },
+    {
+      question: "Do you treat children?",
+      answer:
+        "Yes. Dentciti offers full pediatric dental services — preventive check-ups, fluoride application, sealants, kid-friendly fillings and habit counselling — in a calm, fear-free environment that children actually enjoy visiting.",
+    },
+    {
+      question: "How often should I visit for a check-up?",
+      answer:
+        "We recommend a professional cleaning and check-up every 6 months. Catching issues early prevents bigger and costlier treatments later — and most preventive visits are quick, painless and inexpensive.",
+    },
+    {
+      question: "Do you offer braces and clear aligners?",
+      answer:
+        "Yes — traditional metal braces, discreet ceramic braces, and invisible clear aligners. Dr. Shubhra Sharma will recommend the best option for your lifestyle, treatment goal and budget after a free orthodontic consultation.",
+    },
+    {
+      question: "Do I need to book in advance, or can I walk in?",
+      answer:
+        "Walk-ins are welcome but booking ensures zero wait. Call +91 93204 50006 or +91 92214 05506, or use the online booking form to confirm a slot. We'll call back within 2 hours to confirm.",
+    },
+  ];
+
+  const currentFAQs = activeCategory === 'implants' ? implantFAQs : generalFAQs;
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -98,7 +98,7 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
         <div className="text-center mb-14">
           <p className="section-eyebrow mb-3">Common Questions</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900">
-            Frequently Asked <span className="text-gradient-teal">Questions</span>
+            Frequently Asked <span className="text-gradient-blue">Questions</span>
           </h2>
           <p className="text-slate-600 text-lg md:text-xl font-light">
             Everything you need to know before booking your consultation.
@@ -106,26 +106,26 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
         </div>
 
         {/* Tab switcher */}
-        <div className="flex justify-center mb-12 p-1.5 bg-[#E6F2F2] rounded-2xl max-w-md mx-auto border border-[#0E7C7B]/15">
+        <div className="flex justify-center mb-12 p-1.5 bg-[#E5F3FB] rounded-2xl max-w-md mx-auto border border-[#2A93C7]/15">
           <button
-            onClick={() => handleCategoryChange('laser')}
+            onClick={() => handleCategoryChange('implants')}
             className={`flex-1 py-3 px-6 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${
-              activeCategory === 'laser'
-                ? 'bg-[#0A2540] text-white shadow-lg'
-                : 'text-[#0A2540] hover:bg-white/60'
+              activeCategory === 'implants'
+                ? 'bg-[#0F2A40] text-white shadow-lg'
+                : 'text-[#0F2A40] hover:bg-white/60'
             }`}
           >
-            Laser Treatment
+            Dental Implants
           </button>
           <button
-            onClick={() => handleCategoryChange('laparoscopic')}
+            onClick={() => handleCategoryChange('general')}
             className={`flex-1 py-3 px-6 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${
-              activeCategory === 'laparoscopic'
-                ? 'bg-[#0A2540] text-white shadow-lg'
-                : 'text-[#0A2540] hover:bg-white/60'
+              activeCategory === 'general'
+                ? 'bg-[#0F2A40] text-white shadow-lg'
+                : 'text-[#0F2A40] hover:bg-white/60'
             }`}
           >
-            Laparoscopy
+            General Dentistry
           </button>
         </div>
 
@@ -135,19 +135,19 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
             return (
               <div
                 key={faq.question}
-                className="overflow-hidden border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-[#0E7C7B]/30 transition-all"
+                className="overflow-hidden border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-[#2A93C7]/30 transition-all"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 md:p-7 text-left font-bold hover:bg-[#F4F9F9] transition-colors flex justify-between items-center group"
+                  className="w-full p-6 md:p-7 text-left font-bold hover:bg-[#F5FAFD] transition-colors flex justify-between items-center group"
                   aria-expanded={open}
                 >
-                  <span className="flex-grow pr-4 text-base md:text-lg text-slate-800 group-hover:text-[#0A2540] transition-colors">
+                  <span className="flex-grow pr-4 text-base md:text-lg text-slate-800 group-hover:text-[#0F2A40] transition-colors">
                     {faq.question}
                   </span>
                   <span
-                    className={`w-9 h-9 rounded-full border border-[#0E7C7B]/20 flex items-center justify-center text-[#0E7C7B] transform transition-all duration-300 shrink-0 ${
-                      open ? 'rotate-180 bg-[#0E7C7B] text-white border-[#0E7C7B]' : 'group-hover:border-[#0E7C7B]'
+                    className={`w-9 h-9 rounded-full border border-[#2A93C7]/20 flex items-center justify-center text-[#2A93C7] transform transition-all duration-300 shrink-0 ${
+                      open ? 'rotate-180 bg-[#2A93C7] text-white border-[#2A93C7]' : 'group-hover:border-[#2A93C7]'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -168,7 +168,7 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
                         </p>
                         <button
                           onClick={onBookAppointment}
-                          className="inline-flex items-center gap-2 text-[#0E7C7B] font-bold text-base hover:gap-3 transition-all group/btn"
+                          className="inline-flex items-center gap-2 text-[#2A93C7] font-bold text-base hover:gap-3 transition-all group/btn"
                         >
                           Book Your Consultation
                           <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
