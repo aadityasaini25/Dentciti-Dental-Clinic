@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────────────
+   Isha-Para Clinic — premium medical design tokens
+   Primary: deep medical teal     Accent: gold
+   Dark surfaces: navy            Light surfaces: clinical mist
+   ────────────────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --brand-teal: #0E7C7B;
+    --brand-teal-dark: #0B5F5E;
+    --brand-teal-deep: #083F3F;
+    --brand-navy: #0A2540;
+    --brand-navy-deep: #061B2E;
+    --brand-gold: #C9A961;
+    --brand-gold-light: #E6CF94;
+    --bg-mist: #F4F9F9;
+    --bg-tint: #E6F2F2;
+    --glass-border: rgba(14, 124, 123, 0.18);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --shadow-premium: 0 20px 50px -12px rgba(10, 37, 64, 0.18);
+    --shadow-premium-hover: 0 30px 60px -12px rgba(14, 124, 123, 0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, sans-serif;
+    line-height: 1.6;
+    color: #0F172A;
+    background-color: var(--bg-mist);
+  }
+
+  ::selection {
+    background: var(--brand-teal);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-premium);
+  }
+
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(14, 124, 123, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(10, 37, 64, 0.1);
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-navy) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-mist {
+    background-color: var(--bg-mist);
+  }
+
+  .bg-tint {
+    background-color: var(--bg-tint);
+  }
+
+  /* Premium hover lift used on cards */
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.4s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: var(--shadow-premium-hover);
+  }
+
+  /* Shimmer over imagery */
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+  }
+
+  .shimmer-effect:hover::after {
+    left: 150%;
+  }
+
+  .soft-float {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  /* Decorative dotted backdrop in brand teal */
+  .bg-pattern-dots {
+    background-image: radial-gradient(var(--brand-teal) 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    opacity: 0.1;
+  }
+
+  .bg-pattern-grid {
+    background-image: linear-gradient(var(--brand-teal) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, var(--brand-teal) 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+  }
+
+  /* Animated gradient border (border-beam) for premium service cards */
+  .border-beam {
+    position: relative;
+    z-index: 1;
+  }
+
+  .border-beam::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--brand-teal),
+      var(--brand-gold),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: border-beam 5s linear infinite;
+    z-index: -1;
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  @keyframes border-beam {
+    from {
+      background-position: -200% 0;
+    }
+    to {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Stagger entrance — paired with IntersectionObserver in page.tsx */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+
+  /* Sticky glass header */
+  .glass-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(14, 124, 123, 0.1);
+    transition: all 0.4s ease;
+  }
+
+  .glass-header.scrolled {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 20px -5px rgba(10, 37, 64, 0.12);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-bold text-center transition-all duration-300 cursor-pointer border-none;
+  }
+
+  .btn-primary {
+    @apply text-white shadow-lg rounded-full px-8 py-3.5;
+    background-color: var(--brand-teal);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--brand-teal-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(14, 124, 123, 0.5);
+  }
+
+  .btn-gold {
+    @apply text-white shadow-lg rounded-full px-8 py-3.5 font-bold;
+    background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+    color: var(--brand-navy);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(201, 169, 97, 0.5);
+  }
+
+  .btn-secondary {
+    @apply text-white shadow-lg rounded-full;
+    background-color: var(--brand-navy);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--brand-navy-deep);
+  }
+
+  .card {
+    @apply bg-white rounded-[24px] p-8 transition-all duration-500 border border-slate-100;
+    box-shadow: var(--shadow-premium);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-premium-hover);
+    transform: translateY(-5px);
+  }
+
+  .section-eyebrow {
+    @apply font-semibold text-xs md:text-sm uppercase tracking-[0.25em];
+    color: var(--brand-teal);
+  }
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────── */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(15px, -20px) rotate(2deg); }
+  66% { transform: translate(-10px, 15px) rotate(-1deg); }
+}
+
+@keyframes pulse-shadow {
+  0%, 100% { box-shadow: 0 0 20px rgba(14, 124, 123, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(14, 124, 123, 0.6); }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating { animation: floating 3s ease-in-out infinite; }
+.pulse-shadow { animation: pulse-shadow 2s infinite; }
+
+/* Section visibility — subtle */
+section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  @apply py-20 md:py-32;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Honor user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  section,
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Accessibility focus */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--brand-teal);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(14, 124, 123, 0.15);
+}
+
+/* Scrollbar in brand teal */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-mist);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--brand-teal), var(--brand-navy));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--brand-teal-dark), var(--brand-navy-deep));
+}
+
+/* Print: hide CTAs/popups */
+@media print {
+  .no-print,
+  .sticky-cta,
+  .popup-overlay {
+    display: none !important;
+  }
+}

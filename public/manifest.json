@@ -1,0 +1,16 @@
+{
+  "name": "Isha-Para Clinic | Dr. Deepak Kumar",
+  "short_name": "Isha-Para",
+  "description": "Advanced laser & laparoscopic surgery in Haridwar. Dr. Deepak Kumar — 25+ years of trusted surgical expertise. All TPA / insurance accepted.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4F9F9",
+  "theme_color": "#0E7C7B",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "64x64 32x32 24x24 16x16", "type": "image/x-icon" }
+  ],
+  "categories": ["health", "medical", "surgery"],
+  "lang": "en",
+  "dir": "ltr"
+}
