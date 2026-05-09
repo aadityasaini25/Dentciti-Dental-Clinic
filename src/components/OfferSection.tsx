@@ -16,7 +16,6 @@ export default function OfferSection({ onBookAppointment }: OfferSectionProps) {
     "Painless, gentle technique under local anesthesia",
     "Same-day cosmetic procedures available",
     "Transparent pricing — no surprises",
-    "EMI options on all major treatments",
     "Special offers on combo packages",
   ];
 

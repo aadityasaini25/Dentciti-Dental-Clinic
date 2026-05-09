@@ -16,7 +16,7 @@ const serviceData = [
       "From ₹25,000 (with crown)",
       "Painless under local anesthesia",
       "15–25+ year typical lifespan",
-      "EMI options available",
+      "Transparent pricing",
     ],
     accent: "from-[#2A93C7] to-[#0F2A40]",
     featured: true,
@@ -58,7 +58,7 @@ const serviceData = [
     benefits: [
       "Metal, ceramic & clear aligner options",
       "Adult & teen treatment plans",
-      "Flexible EMI plans",
+      "3D digital smile preview",
       "Free orthodontic consultation",
     ],
     accent: "from-[#0F2A40] to-[#081827]",
@@ -82,11 +82,11 @@ const serviceData = [
     subtitle: "Limited-Time Plans",
     icon: Gift,
     description:
-      "Flexible packages on implants, smile makeovers and aligners. Talk to our team about current offers and EMI options.",
+      "Flexible packages on implants, smile makeovers and aligners. Talk to our team about current offers and combo plans.",
     benefits: [
       "Implant packages from ₹25,000",
       "Smile-makeover combo deals",
-      "EMI on all major treatments",
+      "Seasonal whitening offers",
       "Family-care discounts",
     ],
     accent: "from-[#F5D548] to-[#FBE783]",
@@ -178,7 +178,7 @@ export default function ServiceHighlights() {
             Dental implants starting from <span className="text-gradient-yellow">₹25,000</span>
           </p>
           <p className="text-slate-400 text-sm font-light">
-            Final pricing is finalized only after consultation. EMI options available on every major treatment.
+            Final pricing is finalized only after consultation — written estimates upfront, no hidden charges.
           </p>
         </div>
       </div>

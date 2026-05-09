@@ -22,7 +22,7 @@ const points = [
   {
     icon: Wallet,
     title: "Cost-Efficient, Transparent Dentistry",
-    desc: "Honest, written estimates upfront. Dental implants start at ₹25,000 (with crown). EMI options available on all major treatments — premium care without premium hassle.",
+    desc: "Honest, written estimates upfront. Dental implants start at ₹25,000 (with crown). Transparent pricing on every treatment — premium care without premium hassle.",
   },
 ];
 

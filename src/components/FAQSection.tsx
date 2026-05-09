@@ -8,9 +8,9 @@ interface FAQSectionProps {
   onBookAppointment: () => void;
 }
 
-type FAQCategory = 'implants' | 'general';
+type FAQCategory = 'implants' | 'aligners' | 'general';
 
-// Two-tab FAQ — dental implants + general dentistry, mapped to clinic positioning.
+// Three-tab FAQ — dental implants, clear aligners + general dentistry, mapped to clinic positioning.
 export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
   const [activeCategory, setActiveCategory] = useState<FAQCategory>('implants');
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
@@ -41,10 +41,38 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
       answer:
         "With proper hygiene and routine check-ups, modern dental implants typically last 15–25 years and often a lifetime. Dentciti uses globally trusted implant systems with strong long-term clinical track records.",
     },
+  ];
+
+  const alignerFAQs = [
     {
-      question: "Do you offer EMI on implants?",
+      question: "What are clear aligners and how do they work?",
       answer:
-        "Yes. We offer flexible EMI plans through partner financing, plus full transparency on what's included in your package. Ask our front desk during consultation and we'll walk you through the options.",
+        "Clear aligners are virtually invisible, custom-made trays that gently shift your teeth into the right position. You wear a new set every 1–2 weeks, and each set moves your teeth a little closer to the final smile — no metal wires, no brackets.",
+    },
+    {
+      question: "How much do clear aligners cost at Dentciti?",
+      answer:
+        "Aligner treatment at Dentciti starts from ₹75,000 and varies based on case complexity and the aligner brand chosen (Invisalign, ClearPath, etc.). After a free consultation and 3D scan, we share a transparent fixed-cost plan with no hidden charges.",
+    },
+    {
+      question: "How long does aligner treatment take?",
+      answer:
+        "Most cases complete in 6–18 months depending on the complexity. Mild crowding or spacing can finish in 4–6 months, while more complex bite corrections may take longer. Dr. Shubhra Sharma will share a clear timeline at your consultation.",
+    },
+    {
+      question: "Are aligners better than traditional braces?",
+      answer:
+        "For most adults and teens, yes — aligners are removable, virtually invisible, more comfortable and need fewer clinic visits. However, very complex orthodontic cases may still need braces. We'll honestly tell you what suits your case best.",
+    },
+    {
+      question: "Will aligners affect my speech or eating?",
+      answer:
+        "There's a brief 2–3 day adjustment period where your tongue gets used to the trays. You remove aligners while eating and drinking (anything other than water), so there are no food restrictions at all — unlike braces.",
+    },
+    {
+      question: "How many hours a day do I need to wear them?",
+      answer:
+        "Aligners must be worn 20–22 hours a day for predictable results — you only remove them to eat, drink and brush. The more consistently you wear them, the faster and smoother your treatment progresses.",
     },
   ];
 
@@ -81,7 +109,12 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
     },
   ];
 
-  const currentFAQs = activeCategory === 'implants' ? implantFAQs : generalFAQs;
+  const currentFAQs =
+    activeCategory === 'implants'
+      ? implantFAQs
+      : activeCategory === 'aligners'
+        ? alignerFAQs
+        : generalFAQs;
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -106,10 +139,10 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
         </div>
 
         {/* Tab switcher */}
-        <div className="flex justify-center mb-12 p-1.5 bg-[#E5F3FB] rounded-2xl max-w-md mx-auto border border-[#2A93C7]/15">
+        <div className="flex flex-wrap justify-center gap-1.5 mb-12 p-1.5 bg-[#E5F3FB] rounded-2xl max-w-2xl mx-auto border border-[#2A93C7]/15">
           <button
             onClick={() => handleCategoryChange('implants')}
-            className={`flex-1 py-3 px-6 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${
+            className={`flex-1 min-w-[120px] py-3 px-4 md:px-6 rounded-xl font-bold text-xs md:text-base transition-all duration-300 ${
               activeCategory === 'implants'
                 ? 'bg-[#0F2A40] text-white shadow-lg'
                 : 'text-[#0F2A40] hover:bg-white/60'
@@ -118,8 +151,18 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
             Dental Implants
           </button>
           <button
+            onClick={() => handleCategoryChange('aligners')}
+            className={`flex-1 min-w-[120px] py-3 px-4 md:px-6 rounded-xl font-bold text-xs md:text-base transition-all duration-300 ${
+              activeCategory === 'aligners'
+                ? 'bg-[#0F2A40] text-white shadow-lg'
+                : 'text-[#0F2A40] hover:bg-white/60'
+            }`}
+          >
+            Clear Aligners
+          </button>
+          <button
             onClick={() => handleCategoryChange('general')}
-            className={`flex-1 py-3 px-6 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${
+            className={`flex-1 min-w-[120px] py-3 px-4 md:px-6 rounded-xl font-bold text-xs md:text-base transition-all duration-300 ${
               activeCategory === 'general'
                 ? 'bg-[#0F2A40] text-white shadow-lg'
                 : 'text-[#0F2A40] hover:bg-white/60'

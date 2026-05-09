@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title:
       "Dentciti Dental Clinic | Painless · Fast · Affordable Dentistry in Vashi",
     description:
-      "Dr. Shubhra Sharma — 21+ years of trusted dental care in Navi Mumbai. Dental implants from ₹25,000, painless root canals, smile makeovers, clear aligners. EMI options available.",
+      "Dr. Shubhra Sharma — 21+ years of trusted dental care in Navi Mumbai. Dental implants from ₹25,000, painless root canals, smile makeovers, clear aligners. Transparent pricing.",
     url: "https://dentciti.org/dental-clinic-in-navi-mumbai",
     siteName: "Dentciti Dental Clinic",
     images: [

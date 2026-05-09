@@ -108,7 +108,7 @@ export default function Footer() {
                 "Implants from ₹25,000",
                 "Painless Treatments",
                 "Single-Sitting Procedures",
-                "EMI Options Available",
+                "Transparent Pricing",
                 "Family Dental Care",
               ].map((item) => (
                 <li
