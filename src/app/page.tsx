@@ -10,6 +10,7 @@ import DoctorProfile from "@/components/DoctorProfile";
 import ServiceHighlights from "@/components/ServiceHighlights";
 import FAQSection from "@/components/FAQSection";
 import ClinicPhotos from "@/components/ClinicPhotos";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import GoogleReviews from "@/components/GoogleReviews";
 import CTABox from "@/components/CTABox";
 import Footer from "@/components/Footer";
@@ -84,6 +85,7 @@ export default function Home() {
         <ServiceHighlights />
         <FAQSection onBookAppointment={openPopup} />
         <ClinicPhotos onBookAppointment={openPopup} />
+        <BeforeAfterGallery onBookAppointment={openPopup} />
         <GoogleReviews />
         <CTABox onBookAppointment={openPopup} />
         <Footer />

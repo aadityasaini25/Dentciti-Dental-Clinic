@@ -12,7 +12,7 @@ const doctors = [
   {
     name: "Dr. Shubhra Sharma",
     title: "Cosmetic Dentist & Implantologist",
-    image: "/images/doctor/dr-shubhra.jpg",
+    image: "/images/doctor/dr-shubhra.jpeg",
     description:
       "Dr. Shubhra Sharma is one of Navi Mumbai's most preferred dentists, with 21 years of clinical experience in cosmetic dentistry, dental implants and full-mouth rehabilitation. Her practice at Dentciti Dental Clinic, Vashi is built on three principles — painless procedures, fast turnaround, and transparent, affordable pricing.",
     highlights: [
