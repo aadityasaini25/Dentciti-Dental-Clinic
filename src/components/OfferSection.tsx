@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Tag } from "lucide-react";
 
 interface OfferSectionProps {
   onBookAppointment: () => void;
@@ -22,6 +22,42 @@ export default function OfferSection({ onBookAppointment }: OfferSectionProps) {
   return (
     <section className="py-16 md:py-24 px-4 md:px-8 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto">
+        {/* Clear Aligners — limited-time offer highlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="relative mb-12 md:mb-16"
+        >
+          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#2A93C7] via-[#1E7AAC] to-[#0F2A40] p-1 shadow-[0_20px_50px_rgba(42,147,199,0.25)]">
+            <div className="absolute -top-16 -right-16 w-64 h-64 bg-[#F5D548]/30 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#F5D548]/20 rounded-full blur-3xl" />
+
+            <div className="relative rounded-[28px] bg-gradient-to-br from-[#2A93C7] via-[#1E7AAC] to-[#0F2A40] px-6 py-8 md:px-12 md:py-10 flex flex-col md:flex-row items-center gap-6">
+              <div className="flex items-center gap-5 text-center md:text-left">
+                <div className="hidden md:flex w-16 h-16 rounded-2xl bg-[#F5D548] items-center justify-center shrink-0 shadow-lg rotate-[-6deg]">
+                  <Tag className="w-8 h-8 text-[#0F2A40]" strokeWidth={2.5} />
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5D548] mb-3">
+                    <Sparkles className="w-3.5 h-3.5 text-[#0F2A40]" strokeWidth={2.8} />
+                    <span className="text-[#0F2A40] text-[11px] font-black tracking-widest uppercase">Limited-Time Offer</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                    Up to <span className="text-[#F5D548]">30% OFF</span> on
+                    <br className="hidden md:block" />
+                    <span className="md:inline"> Clear Aligners Treatment</span>
+                  </h3>
+                  <p className="text-white/85 text-sm md:text-base mt-2 font-light">
+                    Invisible. Removable. Comfortable. Straighten your smile discreetly — now at our best-ever price.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="relative">
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#2A93C7]/8 rounded-full blur-3xl -z-10" />
           <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-[#F5D548]/10 rounded-full blur-3xl -z-10" />

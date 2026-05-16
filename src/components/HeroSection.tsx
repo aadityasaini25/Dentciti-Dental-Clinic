@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Phone, ShieldCheck, Award, Smile, Sparkles } from "lucide-react";
+import { Phone, ShieldCheck, Award, Smile, Sparkles, Tag } from "lucide-react";
 
 interface HeroSectionProps {
   onBookAppointment: () => void;
@@ -19,6 +19,21 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
         className="text-center mb-12 md:mb-16"
       >
         <p className="section-eyebrow mb-4">Dentciti Dental Clinic · Vashi, Navi Mumbai</p>
+
+        {/* Limited-time clear aligners offer — eye-catching promo strip */}
+        <div className="flex justify-center mb-5">
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full bg-gradient-to-r from-[#F5D548] to-[#FBE783] text-[#0F2A40] shadow-lg shadow-[#F5D548]/40"
+          >
+            <Tag className="w-3.5 h-3.5 md:w-4 md:h-4" strokeWidth={2.6} />
+            <span className="text-[11px] md:text-xs font-black tracking-wider uppercase">
+              Up to 30% Off · Clear Aligners
+            </span>
+          </motion.div>
+        </div>
 
         {/* USP trust strip — Painless · Fast · Affordable + experience */}
         <motion.div
