@@ -8,14 +8,11 @@ interface FAQSectionProps {
   onBookAppointment: () => void;
 }
 
-type FAQCategory = 'implants' | 'aligners' | 'general';
-
-// Three-tab FAQ — dental implants, clear aligners + general dentistry, mapped to clinic positioning.
+// Single FAQ list — 2 implants, 2 clear aligners, 2 general dentistry.
 export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
-  const [activeCategory, setActiveCategory] = useState<FAQCategory>('implants');
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
-  const implantFAQs = [
+  const faqs = [
     {
       question: "Is the dental implant procedure painful?",
       answer:
@@ -27,24 +24,6 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
         "Single-tooth implants start at ₹25,000 — and that price includes the crown. Final pricing depends on the implant brand, your bone condition and the crown material chosen. We share a transparent, written estimate after your consultation, with no surprises later.",
     },
     {
-      question: "How long does the implant process take?",
-      answer:
-        "The actual surgery is under an hour. The full process — from placement to final crown — typically takes 3–4 months to allow proper bone integration. In selected cases, immediate-load implants can be done so you walk out the same day with a temporary tooth.",
-    },
-    {
-      question: "Am I a candidate for dental implants?",
-      answer:
-        "Most adults with reasonably healthy gums and bone are candidates. A short consultation with a digital X-ray or CBCT scan tells us with certainty. Even patients who lack bone often qualify after simple bone grafting procedures.",
-    },
-    {
-      question: "How long do implants last?",
-      answer:
-        "With proper hygiene and routine check-ups, modern dental implants typically last 15–25 years and often a lifetime. Dentciti uses globally trusted implant systems with strong long-term clinical track records.",
-    },
-  ];
-
-  const alignerFAQs = [
-    {
       question: "What are clear aligners and how do they work?",
       answer:
         "Clear aligners are virtually invisible, custom-made trays that gently shift your teeth into the right position. You wear a new set every 1–2 weeks, and each set moves your teeth a little closer to the final smile — no metal wires, no brackets.",
@@ -55,74 +34,19 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
         "Aligner treatment at Dentciti starts from ₹75,000 and varies based on case complexity and the aligner brand chosen (Invisalign, ClearPath, etc.). After a free consultation and 3D scan, we share a transparent fixed-cost plan with no hidden charges.",
     },
     {
-      question: "How long does aligner treatment take?",
-      answer:
-        "Most cases complete in 6–18 months depending on the complexity. Mild crowding or spacing can finish in 4–6 months, while more complex bite corrections may take longer. Dr. Shubhra Sharma will share a clear timeline at your consultation.",
-    },
-    {
-      question: "Are aligners better than traditional braces?",
-      answer:
-        "For most adults and teens, yes — aligners are removable, virtually invisible, more comfortable and need fewer clinic visits. However, very complex orthodontic cases may still need braces. We'll honestly tell you what suits your case best.",
-    },
-    {
-      question: "Will aligners affect my speech or eating?",
-      answer:
-        "There's a brief 2–3 day adjustment period where your tongue gets used to the trays. You remove aligners while eating and drinking (anything other than water), so there are no food restrictions at all — unlike braces.",
-    },
-    {
-      question: "How many hours a day do I need to wear them?",
-      answer:
-        "Aligners must be worn 20–22 hours a day for predictable results — you only remove them to eat, drink and brush. The more consistently you wear them, the faster and smoother your treatment progresses.",
-    },
-  ];
-
-  const generalFAQs = [
-    {
       question: "Is root canal treatment really painful?",
       answer:
         "Not anymore. With modern rotary endodontics, rubber-dam isolation and digital X-ray, most root canals at Dentciti are completed in a single sitting and are virtually painless under local anesthesia. You'll feel the same as you would for a regular filling.",
-    },
-    {
-      question: "How long does professional teeth whitening take?",
-      answer:
-        "An in-clinic whitening session takes about 45 minutes and delivers visibly brighter teeth in a single visit. We also offer take-home whitening kits for gradual results, depending on your preference and case.",
-    },
-    {
-      question: "Do you treat children?",
-      answer:
-        "Yes. Dentciti offers full pediatric dental services — preventive check-ups, fluoride application, sealants, kid-friendly fillings and habit counselling — in a calm, fear-free environment that children actually enjoy visiting.",
     },
     {
       question: "How often should I visit for a check-up?",
       answer:
         "We recommend a professional cleaning and check-up every 6 months. Catching issues early prevents bigger and costlier treatments later — and most preventive visits are quick, painless and inexpensive.",
     },
-    {
-      question: "Do you offer braces and clear aligners?",
-      answer:
-        "Yes — traditional metal braces, discreet ceramic braces, and invisible clear aligners. Dr. Shubhra Sharma will recommend the best option for your lifestyle, treatment goal and budget after a free orthodontic consultation.",
-    },
-    {
-      question: "Do I need to book in advance, or can I walk in?",
-      answer:
-        "Walk-ins are welcome but booking ensures zero wait. Call +91 93204 50006 or +91 92214 05506, or use the online booking form to confirm a slot. We'll call back within 2 hours to confirm.",
-    },
   ];
-
-  const currentFAQs =
-    activeCategory === 'implants'
-      ? implantFAQs
-      : activeCategory === 'aligners'
-        ? alignerFAQs
-        : generalFAQs;
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  const handleCategoryChange = (category: FAQCategory) => {
-    setActiveCategory(category);
-    setOpenFAQ(0);
   };
 
   return (
@@ -138,42 +62,8 @@ export default function FAQSection({ onBookAppointment }: FAQSectionProps) {
           </p>
         </div>
 
-        {/* Tab switcher */}
-        <div className="flex flex-wrap justify-center gap-1.5 mb-12 p-1.5 bg-[#E5F3FB] rounded-2xl max-w-2xl mx-auto border border-[#2A93C7]/15">
-          <button
-            onClick={() => handleCategoryChange('implants')}
-            className={`flex-1 min-w-[120px] py-3 px-4 md:px-6 rounded-xl font-bold text-xs md:text-base transition-all duration-300 ${
-              activeCategory === 'implants'
-                ? 'bg-[#0F2A40] text-white shadow-lg'
-                : 'text-[#0F2A40] hover:bg-white/60'
-            }`}
-          >
-            Dental Implants
-          </button>
-          <button
-            onClick={() => handleCategoryChange('aligners')}
-            className={`flex-1 min-w-[120px] py-3 px-4 md:px-6 rounded-xl font-bold text-xs md:text-base transition-all duration-300 ${
-              activeCategory === 'aligners'
-                ? 'bg-[#0F2A40] text-white shadow-lg'
-                : 'text-[#0F2A40] hover:bg-white/60'
-            }`}
-          >
-            Clear Aligners
-          </button>
-          <button
-            onClick={() => handleCategoryChange('general')}
-            className={`flex-1 min-w-[120px] py-3 px-4 md:px-6 rounded-xl font-bold text-xs md:text-base transition-all duration-300 ${
-              activeCategory === 'general'
-                ? 'bg-[#0F2A40] text-white shadow-lg'
-                : 'text-[#0F2A40] hover:bg-white/60'
-            }`}
-          >
-            General Dentistry
-          </button>
-        </div>
-
         <div className="space-y-4">
-          {currentFAQs.map((faq, index) => {
+          {faqs.map((faq, index) => {
             const open = openFAQ === index;
             return (
               <div
